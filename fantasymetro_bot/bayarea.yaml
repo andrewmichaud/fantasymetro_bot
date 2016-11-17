@@ -1,0 +1,177 @@
+name: "BART"
+stations:
+  - name: "Richmond"
+    x: 555
+    y: 135
+
+  - name: "El Cerrito del Norte"
+    x: 575
+    y: 175
+
+  - name: "North Berkeley"
+    x: 595
+    y: 215
+
+  - name: "Downtown Berkeley"
+    x: 615
+    y: 255
+
+  - name: "Ashby"
+    x: 635
+    y: 295
+
+  - name: "MacArthur"
+    x: 645
+    y: 335
+
+  - name: "19th St./Oakland"
+    x: 642
+    y: 360
+
+  - name: "12th St./Oakland City Center"
+    x: 639
+    y: 385
+
+  # - name: "Pleasant Hill/Contra Costa Centre"
+  #   x: 850
+  #   y: 150
+  #
+  # - name: "Walnut Creek"
+  #   x: 800
+  #   y: 130
+  #
+  # - name: "Lafayette"
+  #   x: 710
+  #   y: 110
+  #
+  # - name: "Orinda"
+  #   x: 630
+  #   y: 100
+  #
+  # - name: "Rockridge"
+  #   x: 550
+  #   y: 90
+  #
+  # # - name: "Pittsburg/Bay Point"
+  # #   x: 800
+  # #   y: 210
+  # #
+  # # - name: "Pittsburg/Bay Point"
+  # #   x: 800
+  # #   y: 210
+  # #
+  # # - name: "Pittsburg/Bay Point"
+  # #   x: 800
+  # #   y: 210
+  # #
+  # # - name: "Pittsburg/Bay Point"
+  # #   x: 800
+  # #   y: 210
+  # #
+  # # - name: "Pittsburg/Bay Point"
+  # #   x: 800
+  # #   y: 210
+  # #
+  # # - name: "Pittsburg/Bay Point"
+  # #   x: 800
+  # #   y: 210
+  # #
+  # # - name: "Pittsburg/Bay Point"
+  # #   x: 800
+  # #   y: 210
+  # #
+  # # - name: "Pittsburg/Bay Point"
+  # #   x: 800
+  # #   y: 210
+  # #
+  # # - name: "Pittsburg/Bay Point"
+  # #   x: 800
+  # #   y: 210
+  # #
+  # # - name: "Pittsburg/Bay Point"
+  # #   x: 800
+  # #   y: 210
+  # #
+  # # - name: "Pittsburg/Bay Point"
+  # #   x: 800
+  # #   y: 210
+  # #
+  # # - name: "Pittsburg/Bay Point"
+  # #   x: 800
+  # #   y: 210
+  # #
+  # # - name: "Pittsburg/Bay Point"
+  # #   x: 800
+  # #   y: 210
+  # #
+  # # - name: "Pittsburg/Bay Point"
+  # #   x: 800
+  # #   y: 210
+  # #
+  # # - name: "Pittsburg/Bay Point"
+  # #   x: 800
+  # #   y: 210
+  # #
+  # # - name: "Pittsburg/Bay Point"
+  # #   x: 800
+  # #   y: 210
+  # #
+  # # - name: "Pittsburg/Bay Point"
+  # #   x: 800
+  # #   y: 210
+  # #
+  # # - name: "Pittsburg/Bay Point"
+  # #   x: 800
+  # #   y: 210
+  # #
+  # # - name: "Pittsburg/Bay Point"
+  # #   x: 800
+  # #   y: 210
+  # #
+  # # - name: "Pittsburg/Bay Point"
+  # #   x: 800
+  # #   y: 210
+  # #
+  # # - name: "Pittsburg/Bay Point"
+  # #   x: 800
+  # #   y: 210
+  # #
+  # # - name: "Pittsburg/Bay Point"
+  # #   x: 800
+  # #   y: 210
+  # #
+  # # - name: "Pittsburg/Bay Point"
+  # #   x: 800
+  # #   y: 210
+  # #
+  # # - name: "Pittsburg/Bay Point"
+  # #   x: 800
+  # #   y: 210
+  # #
+  # # - name: "Pittsburg/Bay Point"
+  # #   x: 800
+  # #   y: 210
+  # #
+  # # - name: "Pittsburg/Bay Point"
+  # #   x: 800
+  # #   y: 210
+  # #
+  # # - name: "Pittsburg/Bay Point"
+  # #   x: 800
+  # #   y: 210
+  # #
+  # # - name: "Pittsburg/Bay Point"
+  # #   x: 800
+  # #   y: 210
+  # #
+  # # - name: "Pittsburg/Bay Point"
+  # #   x: 800
+  # #   y: 210
+  # #
+  # # - name: "Pittsburg/Bay Point"
+  # #   x: 800
+  # #   y: 210
+  # #
+  # # - name: "Pittsburg/Bay Point"
+  # #   x: 800
+  # #   y: 210
