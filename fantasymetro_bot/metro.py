@@ -45,7 +45,6 @@ class Metro(object):
             draw.ellipse([r.start.x - RADIUS, r.start.y - RADIUS,
                           r.start.x + RADIUS, r.start.y + RADIUS],
                          outline=r.color)
-            draw.text((r.start.x, r.start.y), r.start.name, fill="black")
             last = (r.start.x, r.start.y)
 
             for s in r.stations[1:-1]:
@@ -54,8 +53,6 @@ class Metro(object):
                               s.x + RADIUS, s.y + RADIUS],
                              outline=r.color, fill=r.color)
 
-                draw.text((s.x, s.y), s.name, fill="black")
-
                 last = (s.x, s.y)
 
             draw.line([last, (r.end.x, r.end.y)], fill=r.color, width=3)
@@ -63,9 +60,13 @@ class Metro(object):
                           r.end.x + RADIUS, r.end.y + RADIUS],
                          outline=r.color)
 
-            draw.text((r.end.x, r.end.y), r.end.name, fill="black")
-
             # draw.line((0, 0) + im.size, fill="red", width=3)
+
+        # Draw text last so it is at the top layer.
+        for r in self.routes:
+            for s in r.stations:
+                draw.text((s.x, s.y), s.name, fill="black")
+
 
         # write to stdout
         im.save(draw_copy)

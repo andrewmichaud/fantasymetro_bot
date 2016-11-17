@@ -6,7 +6,7 @@ import random
 ROUTE_STATIONS_RANGE = range(4, 10)
 
 # yep, this is all of them
-COLORS = ["purple", "blue", "green", "yellow", "orange", "red", "pink", "black"]
+COLORS = ["purple", "blue", "green", "yellow", "orange", "red", "pink", "teal"]
 
 
 class Route(object):
