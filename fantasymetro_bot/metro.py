@@ -67,8 +67,7 @@ class Metro(object):
             for s in r.stations:
                 draw.text((s.x, s.y), s.name, fill="black")
 
-
-        # write to stdout
+        # Save image.
         im.save(draw_copy)
 
 
@@ -80,8 +79,11 @@ if __name__ == "__main__":
     num_routes = random.choice(NUM_ROUTES_RANGE)
 
     routes = []
+    chosen_colors = []
     for i in range(num_routes):
-        routes.append(route.Route(station_set))
+        r = route.Route(station_set, chosen_colors=chosen_colors)
+        chosen_colors.append(r.color)
+        routes.append(r)
 
     metro = Metro(routes=routes, name=station_set.name)
     print(repr(metro))
