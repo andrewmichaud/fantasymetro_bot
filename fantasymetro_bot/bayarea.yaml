@@ -32,49 +32,49 @@ stations:
     x: 639
     y: 385
 
-  # - name: "Pleasant Hill/Contra Costa Centre"
-  #   x: 850
-  #   y: 150
-  #
-  # - name: "Walnut Creek"
-  #   x: 800
-  #   y: 130
-  #
-  # - name: "Lafayette"
-  #   x: 710
-  #   y: 110
-  #
-  # - name: "Orinda"
-  #   x: 630
-  #   y: 100
-  #
-  # - name: "Rockridge"
-  #   x: 550
-  #   y: 90
-  #
-  # # - name: "Pittsburg/Bay Point"
-  # #   x: 800
-  # #   y: 210
-  # #
-  # # - name: "Pittsburg/Bay Point"
-  # #   x: 800
-  # #   y: 210
-  # #
-  # # - name: "Pittsburg/Bay Point"
-  # #   x: 800
-  # #   y: 210
-  # #
-  # # - name: "Pittsburg/Bay Point"
-  # #   x: 800
-  # #   y: 210
-  # #
-  # # - name: "Pittsburg/Bay Point"
-  # #   x: 800
-  # #   y: 210
-  # #
-  # # - name: "Pittsburg/Bay Point"
-  # #   x: 800
-  # #   y: 210
+  - name: "West Oakland"
+    x: 585
+    y: 420
+
+  - name: "Embarcadero"
+    x: 465
+    y: 475
+
+  - name: "Montgomery St."
+    x: 455
+    y: 490
+
+  - name: "Powell St."
+    x: 445
+    y: 505
+
+  - name: "Civic Center/UN Plaza"
+    x: 435
+    y: 520
+
+  - name: "16th St. Mission"
+    x: 425
+    y: 535
+
+  - name: "24th St. Mission"
+    x: 415
+    y: 550
+
+  - name: "Glen Park"
+    x: 405
+    y: 565
+
+  - name: "Balboa Park"
+    x: 395
+    y: 580
+
+  - name: "Daly City"
+    x: 385
+    y: 595
+
+  - name: "Colma"
+    x: 385
+    y: 640
   # #
   # # - name: "Pittsburg/Bay Point"
   # #   x: 800
