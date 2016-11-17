@@ -13,7 +13,7 @@ setup(author="Andrew Michaud",
           "console_scripts": ["fantasy_metro_bot = fantasy_metro_bot.__main__:main"]
       },
 
-      install_requires=["tweepy>=3.5"],
+      install_requires=["tweepy>=3.5", "pyyaml>=3.12"],
 
       license="BSD3",
 
