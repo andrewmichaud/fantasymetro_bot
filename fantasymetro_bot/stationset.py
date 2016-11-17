@@ -1,4 +1,4 @@
-"""Object describing a set of metro stations."""
+"""StationSet object, Station object, and methods for producing them from YAMl config files."""
 import logging
 
 import yaml
@@ -9,7 +9,7 @@ LOG = logging.getLogger("root")
 class StationSet(object):
     def __init__(self):
         self.name = None
-        self.stations = []
+        self.stations = set()
 
     def __repr__(self):
         return "StationSet(name: '{}', stations: {})".format(self.name, self.stations)
@@ -61,8 +61,3 @@ def load(filename):
     LOG.debug("Retrieved YAML from stationset file: %s", pretty_stationset)
 
     return stationset_from_yaml(yaml_stationset)
-
-if __name__ == "__main__":
-
-    station_set = load("sfmetro.yaml")
-    print(repr(station_set))

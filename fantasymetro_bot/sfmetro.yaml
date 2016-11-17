@@ -20,6 +20,22 @@ stations:
     x: 100.0
     y: 134
 
+  - name: "Qi"
+    x: 100.0
+    y: 134
+
+  - name: "Qo"
+    x: 100.0
+    y: 134
+
+  - name: "Qp"
+    x: 100.0
+    y: 134
+
+  - name: "Q;"
+    x: 100.0
+    y: 134
+
   - name: "R"
     x: 30.0
     y: 138
@@ -33,4 +49,4 @@ stations:
     y: 10
 
 revision: 1.0
-station_yaml_version: 1.0
+station_set_yaml_version: 1.0
