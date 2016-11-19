@@ -64,7 +64,7 @@ class Metro(object):
 
         # Draw text last so it is at the top layer.
         for r in self.routes:
-            for s in r.stations:
+            for s in r.all_stations:
                 draw.text((s.x, s.y), s.name, fill="black")
 
         # Save image.
