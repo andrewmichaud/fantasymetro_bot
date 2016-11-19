@@ -75,103 +75,99 @@ stations:
   - name: "Colma"
     x: 385
     y: 640
-  # #
-  # # - name: "Pittsburg/Bay Point"
-  # #   x: 800
-  # #   y: 210
-  # #
-  # # - name: "Pittsburg/Bay Point"
-  # #   x: 800
-  # #   y: 210
-  # #
-  # # - name: "Pittsburg/Bay Point"
-  # #   x: 800
-  # #   y: 210
-  # #
-  # # - name: "Pittsburg/Bay Point"
-  # #   x: 800
-  # #   y: 210
-  # #
-  # # - name: "Pittsburg/Bay Point"
-  # #   x: 800
-  # #   y: 210
-  # #
-  # # - name: "Pittsburg/Bay Point"
-  # #   x: 800
-  # #   y: 210
-  # #
-  # # - name: "Pittsburg/Bay Point"
-  # #   x: 800
-  # #   y: 210
-  # #
-  # # - name: "Pittsburg/Bay Point"
-  # #   x: 800
-  # #   y: 210
-  # #
-  # # - name: "Pittsburg/Bay Point"
-  # #   x: 800
-  # #   y: 210
-  # #
-  # # - name: "Pittsburg/Bay Point"
-  # #   x: 800
-  # #   y: 210
-  # #
-  # # - name: "Pittsburg/Bay Point"
-  # #   x: 800
-  # #   y: 210
-  # #
-  # # - name: "Pittsburg/Bay Point"
-  # #   x: 800
-  # #   y: 210
-  # #
-  # # - name: "Pittsburg/Bay Point"
-  # #   x: 800
-  # #   y: 210
-  # #
-  # # - name: "Pittsburg/Bay Point"
-  # #   x: 800
-  # #   y: 210
-  # #
-  # # - name: "Pittsburg/Bay Point"
-  # #   x: 800
-  # #   y: 210
-  # #
-  # # - name: "Pittsburg/Bay Point"
-  # #   x: 800
-  # #   y: 210
-  # #
-  # # - name: "Pittsburg/Bay Point"
-  # #   x: 800
-  # #   y: 210
-  # #
-  # # - name: "Pittsburg/Bay Point"
-  # #   x: 800
-  # #   y: 210
-  # #
-  # # - name: "Pittsburg/Bay Point"
-  # #   x: 800
-  # #   y: 210
-  # #
-  # # - name: "Pittsburg/Bay Point"
-  # #   x: 800
-  # #   y: 210
-  # #
-  # # - name: "Pittsburg/Bay Point"
-  # #   x: 800
-  # #   y: 210
-  # #
-  # # - name: "Pittsburg/Bay Point"
-  # #   x: 800
-  # #   y: 210
-  # #
-  # # - name: "Pittsburg/Bay Point"
-  # #   x: 800
-  # #   y: 210
-  # #
-  # # - name: "Pittsburg/Bay Point"
-  # #   x: 800
-  # #   y: 210
-  # #
-  # # - name: "Pittsburg/Bay Point"
-  # #   x: 800
-  # #   y: 210
+
+  - name: "South San Francisco"
+    x: 415
+    y: 685
+
+  - name: "San Bruno"
+    x: 445
+    y: 730
+
+  - name: "San Francisco International Airport (SFO)"
+    x: 495
+    y: 745
+
+  - name: "Millbrae"
+    x: 475
+    y: 775
+
+  - name: "Lake Merritt"
+    x: 652
+    y: 390
+
+  - name: "Fruitvale"
+    x: 672
+    y: 420
+
+  - name: "Coliseum"
+    x: 692
+    y: 450
+
+  - name: "San Leandro"
+    x: 712
+    y: 480
+
+  - name: "Bay Fair"
+    x: 732
+    y: 510
+
+  - name: "Hayward"
+    x: 772
+    y: 570
+
+  - name: "South Hayward"
+    x: 812
+    y: 530
+
+  - name: "Union City"
+    x: 852
+    y: 600
+
+  - name: "Fremont"
+    x: 892
+    y: 670
+
+  - name: "Castro Valley"
+    x: 812
+    y: 540
+
+  - name: "West Dublin/Pleasanton"
+    x: 912
+    y: 540
+
+  - name: "Dublin/Pleasanton"
+    x: 940
+    y: 540
+
+  - name: "Rockridge"
+    x: 675
+    y: 305
+
+  - name: "Orinda"
+    x: 715
+    y: 275
+
+  - name: "Lafayette"
+    x: 755
+    y: 245
+
+  - name: "Walnut Creek"
+    x: 795
+    y: 210
+
+  - name: "Pleasant Hill/Contra Coast Centre"
+    x: 810
+    y: 190
+
+  - name: "Concord"
+    x: 825
+    y: 170
+
+  - name: "North Concord/Martinez"
+    x: 840
+    y: 150
+
+  - name: "Pittsburg/Bay Point"
+    x: 855
+    y: 130
