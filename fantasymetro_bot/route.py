@@ -9,7 +9,7 @@ LOG = logging.getLogger("root")
 STATIONS_RANGE = range(5, 8)
 
 # yep, this is all of them
-COLORS = ["purple", "blue", "green", "yellow", "orange", "red", "pink", "teal"]
+COLORS = ["purple", "blue", "green", "yellow", "orange", "red", "magenta", "teal"]
 
 
 class Route(object):
