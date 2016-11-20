@@ -1,4 +1,5 @@
 """Module for a Metro, a set of Routes."""
+import logging
 import os
 import random
 from shutil import copyfile
@@ -7,6 +8,12 @@ from PIL import Image, ImageDraw, ImageFont
 
 import route
 import stationset
+
+LOG = logging.getLogger("root")
+
+
+# Number of routes to put in the metro system.
+NUM_ROUTES_RANGE = range(3, 6)
 
 
 class Metro(object):
@@ -24,18 +31,15 @@ class Metro(object):
 
         return out
 
-    def draw(self, filename):
+    def draw(self, source_image, dest_image):
         """Draw metro onto image."""
 
-        base, ext = os.path.splitext(filename)
-        draw_copy = base + "-drawn" + ext
-        copyfile(filename, draw_copy)
+        base, ext = os.path.splitext(source_image)
+        copyfile(source_image, dest_image)
 
-        im = Image.open(draw_copy)
+        im = Image.open(dest_image)
 
         font = ImageFont.truetype("DejaVuSerif.ttf", 16)
-        width, height = im.size
-        print("Image is wxh {}x{}".format(width, height))
 
         draw = ImageDraw.Draw(im)
 
@@ -63,18 +67,19 @@ class Metro(object):
         # Draw text last so it is at the top layer.
         for r in self.routes:
             for s in r.all_stations:
-                draw.text((s.x+RADIUS, s.y+RADIUS), s.name, fill="red", font=font)
+                draw.text((s.x+RADIUS, s.y+RADIUS), s.name, fill="purple", font=font)
 
         # Save image.
-        im.save(draw_copy)
+        im.save(dest_image)
 
 
-if __name__ == "__main__":
-    station_set = stationset.load("bayarea.yaml")
-
-    NUM_ROUTES_RANGE = range(3, 5)
+def gen(config_file, source_image, dest_image):
+    """Generate a fantasy metro system image."""
+    station_set = stationset.load(config_file)
+    LOG.debug("Producing fantasy metro system for %s.", station_set.name)
 
     num_routes = random.choice(NUM_ROUTES_RANGE)
+    LOG.debug("Creating %s routes.", num_routes)
 
     routes = []
     chosen_colors = []
@@ -83,7 +88,8 @@ if __name__ == "__main__":
         chosen_colors.append(r.color)
         routes.append(r)
 
+    # Draw metro.
     metro = Metro(routes=routes, name=station_set.name)
-    print(repr(metro))
 
-    metro.draw("bayarea.png")
+    LOG.info("Drawing metro system for %s to %s", station_set.name, dest_image)
+    metro.draw(source_image, dest_image)

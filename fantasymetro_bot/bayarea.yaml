@@ -1,5 +1,5 @@
 name: "BART"
-stations:
+real_stations:
   - name: "Richmond"
     x: 555
     y: 135
@@ -85,7 +85,7 @@ stations:
     y: 765
 
   - name: "San Francisco International Airport (SFO)"
-    x: 440
+    x: 450
     y: 780
 
   - name: "Millbrae"
@@ -171,3 +171,36 @@ stations:
   - name: "Pittsburg/Bay Point"
     x: 1030
     y: 90
+
+fantasy_stations:
+  - name: "Milpitas"
+    x: 1100
+    y: 1100
+
+  - name: "Warm Springs"
+    x: 1100
+    y: 950
+
+  - name: "Marin"
+    x: 100
+    y: 50
+
+  - name: "San Jose"
+    x: 1030
+    y: 400
+
+  - name: "Palo Alto"
+    x: 950
+    y: 480
+
+  - name: "Mountain View"
+    x: 977
+    y: 1110
+
+  - name: "San Rafel"
+    x: 220
+    y: 130
+
+  - name: "Alameda"
+    x: 662
+    y: 450

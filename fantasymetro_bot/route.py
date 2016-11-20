@@ -6,7 +6,7 @@ import random
 
 LOG = logging.getLogger("root")
 
-ROUTE_STATIONS_RANGE = range(5, 10)
+STATIONS_RANGE = range(5, 8)
 
 # yep, this is all of them
 COLORS = ["purple", "blue", "green", "yellow", "orange", "red", "pink", "teal"]
@@ -32,70 +32,82 @@ class Route(object):
         self.name = self.start.name
         LOG.debug("Chose %s as route name.", self.name)
 
-        self.all_stations = [self.start] + self.stations + [self.end]
-
     def station_gen(self, station_set):  # alg=NEARNESS_SLOPE_COMBINED_RANKING):
         """Generate list of stations for this route from a list of possible stations."""
         # TODO use param that comes in
 
         # Generate route.
-        remaining = copy.copy(station_set.stations)
-        terminus = random.choice(list(remaining))
-        remaining.discard(terminus)
-        self.stations = [terminus]
-        self.start = terminus
+        remaining_real = copy.copy(station_set.real_stations)
+        remaining_fantasy = copy.copy(station_set.fantasy_stations)
+
+        self.start = random.choice(list(remaining_real))
+        remaining_real.discard(self.start)
+
+        self.stations = []
         LOG.debug("Chose %s as start terminus.", self.start)
 
-        num_stations = random.choice(ROUTE_STATIONS_RANGE)
-        if num_stations > len(remaining):
-            LOG.debug("Capping num_stations to %s (was %s).", len(remaining), num_stations)
-            num_stations = len(remaining)
+        num_stations = random.choice(STATIONS_RANGE)
+        if num_stations > len(remaining_real):
+            LOG.debug("Capping num_stations to %s (was %s).", len(remaining_real), num_stations)
+            num_stations = len(remaining_real)
 
         LOG.debug("Picking %s stations for this route.", num_stations)
-        LOG.debug("Using alg %s.", "COMPLETE ME")
 
+        # Decide on stations for route.
         one_ago = None
         two_ago = None
         for i in range(num_stations-1):
-            # alg chunk injection point
-            # TODO make this configurable for fun if nothing else
-
-            # ALG_ANGLE
             # Choose next stations that will give you large angles compared to the last station.
             # Pick first two stations randomly.
             # Calculate length of line segment between one_ago station and two_ago station.
 
             if one_ago is None and two_ago is None:
-                two_ago = random.choice(list(remaining))
-                remaining.discard(two_ago)
+                two_ago = random.choice(list(remaining_real))
+                remaining_real.discard(two_ago)
 
-                one_ago = random.choice(list(remaining))
-                remaining.discard(one_ago)
+                one_ago = random.choice(list(remaining_real))
+                remaining_real.discard(one_ago)
 
-            angs = {station_calc_ang(station, one_ago, two_ago): station
-                    for station in list(remaining)}
+            # Add fantasy stations at random.
+            perc = random.uniform(0, 1)
+            if perc < 0.30:
+                stations_list = list(remaining_fantasy)
+                real = False
+
+            else:
+                stations_list = list(remaining_real)
+                real = True
+
+            angs = {station_calc_ang(station, one_ago, two_ago): station for station in
+                    stations_list}
             sorted_station_ranking = sorted(angs.items(), reverse=True)
             LOG.debug("Sorted stations: {}".format(sorted_station_ranking))
 
             perc = random.uniform(0, 1)
-
             if perc > 0.20:
+                LOG.debug("Trying to force path angle >= 140 degrees")
                 options = [(val, station) for val, station in sorted_station_ranking if val >= 140]
 
                 if len(options) < 2:
                     options = sorted_station_ranking[:2]
 
             elif perc <= 0.20 and perc > 0.0:
+                LOG.debug("Trying to force path angle >= 100 degrees")
                 options = [(val, station) for val, station in sorted_station_ranking if val >= 110]
 
                 if len(options) < 2:
                     options = sorted_station_ranking[:2]
 
             else:
-                options = sorted_station_ranking[:10]
+                LOG.debug("Picking whatever kind of angle.")
+                options = sorted_station_ranking
 
             station = random.choice(options)[1]
-            remaining.discard(station)
+            if real:
+                remaining_real.discard(station)
+            else:
+                remaining_fantasy.discard(station)
+
             self.stations.append(station)
 
             two_ago = one_ago
@@ -103,6 +115,8 @@ class Route(object):
 
         self.end = self.stations[-1]
         self.stations = self.stations[:-1]
+
+        self.all_stations = [self.start] + self.stations + [self.end]
 
     def __repr__(self):
         first_line = "Route(name: '{}', color: '{}')\n".format(self.name, self.color)
@@ -141,6 +155,8 @@ def calc_ang(a, b, c):
         # fucking radians
 
     except ValueError as e:
+        # TODO figure out what the domain error is here. I suspect we're getting angles >180, but I
+        # haven't actually dug into it.
         LOG.error("Received math.ValueError %s", e)
         LOG.error("Ignoring it and returning 180 degrees as angle.")
         return 180
@@ -154,6 +170,7 @@ def station_calc_ang(station, one_ago, two_ago):
     a = station_dist(two_ago, one_ago)
 
     # wow this diagram is garbage
+    # 2-ago station, 1-ago station, station we'd like to add.
     # 2A
     # * *
     # *   *

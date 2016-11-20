@@ -9,7 +9,8 @@ LOG = logging.getLogger("root")
 class StationSet(object):
     def __init__(self):
         self.name = None
-        self.stations = set()
+        self.real_stations = set()
+        self.fantasy_stations = set()
 
     def __repr__(self):
         return "StationSet(name: '{}', stations: {})".format(self.name, self.stations)
@@ -41,11 +42,27 @@ def stationset_from_yaml(yaml):
     """Produce StationSet from YAML."""
     station_set = StationSet()
 
+    LOG.debug("Loading name for stationset from config YAML.")
     station_set.name = yaml.get("name", None)
-    station_set.stations = set()
-    stations_yaml = yaml.get("stations", [])
-    for station_yaml in stations_yaml:
-        station_set.stations.add(station_from_yaml(station_yaml))
+
+    LOG.info("Loaded stationset %s from config.", station_set.name)
+
+    station_set.real_stations = set()
+    station_set.fantasy_stations = set()
+
+    LOG.debug("Loading real stations from config YAML.")
+    real_stations_yaml = yaml.get("real_stations", [])
+    for station_yaml in real_stations_yaml:
+        station_set.real_stations.add(station_from_yaml(station_yaml))
+
+    LOG.debug("Loaded real stations %s.", station_set.real_stations)
+
+    LOG.debug("Loading fantasy stations from config YAML.")
+    fantasy_stations_yaml = yaml.get("fantasy_stations", [])
+    for station_yaml in fantasy_stations_yaml:
+        station_set.fantasy_stations.add(station_from_yaml(station_yaml))
+
+    LOG.debug("Loaded fantasy stations %s.", station_set.fantasy_stations)
 
     return station_set
 
