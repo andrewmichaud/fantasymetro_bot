@@ -57,117 +57,117 @@ stations:
     y: 535
 
   - name: "24th St. Mission"
-    x: 415
-    y: 550
+    x: 400
+    y: 565
 
   - name: "Glen Park"
-    x: 405
-    y: 565
+    x: 395
+    y: 575
 
   - name: "Balboa Park"
     x: 395
-    y: 580
+    y: 590
 
   - name: "Daly City"
-    x: 385
-    y: 595
+    x: 390
+    y: 645
 
   - name: "Colma"
-    x: 385
-    y: 640
+    x: 396
+    y: 661
 
   - name: "South San Francisco"
-    x: 415
-    y: 685
+    x: 398
+    y: 725
 
   - name: "San Bruno"
-    x: 445
-    y: 730
+    x: 402
+    y: 765
 
   - name: "San Francisco International Airport (SFO)"
-    x: 495
-    y: 745
+    x: 440
+    y: 780
 
   - name: "Millbrae"
-    x: 475
-    y: 775
+    x: 430
+    y: 825
 
   - name: "Lake Merritt"
-    x: 652
-    y: 390
+    x: 670
+    y: 370
 
   - name: "Fruitvale"
     x: 672
     y: 420
 
   - name: "Coliseum"
-    x: 692
-    y: 450
+    x: 695
+    y: 455
 
   - name: "San Leandro"
-    x: 712
-    y: 480
+    x: 742
+    y: 515
 
   - name: "Bay Fair"
-    x: 732
-    y: 510
+    x: 745
+    y: 540
 
   - name: "Hayward"
-    x: 772
-    y: 570
+    x: 855
+    y: 700
 
   - name: "South Hayward"
-    x: 812
-    y: 530
+    x: 917
+    y: 777
 
   - name: "Union City"
-    x: 852
-    y: 600
+    x: 977
+    y: 805
 
   - name: "Fremont"
-    x: 892
-    y: 670
+    x: 1002
+    y: 862
 
   - name: "Castro Valley"
-    x: 812
-    y: 540
+    x: 932
+    y: 580
 
   - name: "West Dublin/Pleasanton"
-    x: 912
-    y: 540
+    x: 1042
+    y: 630
 
   - name: "Dublin/Pleasanton"
-    x: 940
-    y: 540
+    x: 1102
+    y: 630
 
   - name: "Rockridge"
     x: 675
     y: 305
 
   - name: "Orinda"
-    x: 715
-    y: 275
+    x: 810
+    y: 180
 
   - name: "Lafayette"
-    x: 755
-    y: 245
-
-  - name: "Walnut Creek"
-    x: 795
-    y: 210
-
-  - name: "Pleasant Hill/Contra Coast Centre"
-    x: 810
-    y: 190
-
-  - name: "Concord"
-    x: 825
+    x: 850
     y: 170
 
-  - name: "North Concord/Martinez"
-    x: 840
+  - name: "Walnut Creek"
+    x: 890
+    y: 160
+
+  - name: "Pleasant Hill/Contra Coast Centre"
+    x: 930
     y: 150
 
+  - name: "Concord"
+    x: 970
+    y: 140
+
+  - name: "North Concord/Martinez"
+    x: 1000
+    y: 112
+
   - name: "Pittsburg/Bay Point"
-    x: 855
-    y: 130
+    x: 1030
+    y: 90

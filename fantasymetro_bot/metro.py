@@ -1,10 +1,9 @@
 """Module for a Metro, a set of Routes."""
 import os
-import sys
 import random
 from shutil import copyfile
 
-from PIL import Image, ImageDraw
+from PIL import Image, ImageDraw, ImageFont
 
 import route
 import stationset
@@ -34,6 +33,7 @@ class Metro(object):
 
         im = Image.open(draw_copy)
 
+        font = ImageFont.truetype("DejaVuSerif.ttf", 16)
         width, height = im.size
         print("Image is wxh {}x{}".format(width, height))
 
@@ -41,13 +41,13 @@ class Metro(object):
 
         for r in self.routes:
             # Draw start.
-            RADIUS = 5
+            RADIUS = 6
             draw.ellipse([r.start.x - RADIUS, r.start.y - RADIUS,
                           r.start.x + RADIUS, r.start.y + RADIUS],
                          outline=r.color)
             last = (r.start.x, r.start.y)
 
-            for s in r.stations[1:-1]:
+            for s in r.stations:
                 draw.line([last, (s.x, s.y)], fill=r.color, width=3)
                 draw.ellipse([s.x - RADIUS, s.y - RADIUS,
                               s.x + RADIUS, s.y + RADIUS],
@@ -60,12 +60,10 @@ class Metro(object):
                           r.end.x + RADIUS, r.end.y + RADIUS],
                          outline=r.color)
 
-            # draw.line((0, 0) + im.size, fill="red", width=3)
-
         # Draw text last so it is at the top layer.
         for r in self.routes:
             for s in r.all_stations:
-                draw.text((s.x, s.y), s.name, fill="black")
+                draw.text((s.x+RADIUS, s.y+RADIUS), s.name, fill="red", font=font)
 
         # Save image.
         im.save(draw_copy)
@@ -74,7 +72,7 @@ class Metro(object):
 if __name__ == "__main__":
     station_set = stationset.load("bayarea.yaml")
 
-    NUM_ROUTES_RANGE = range(3, 7)
+    NUM_ROUTES_RANGE = range(3, 5)
 
     num_routes = random.choice(NUM_ROUTES_RANGE)
 

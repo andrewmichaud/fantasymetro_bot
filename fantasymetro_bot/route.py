@@ -6,7 +6,7 @@ import random
 
 LOG = logging.getLogger("root")
 
-ROUTE_STATIONS_RANGE = range(5, 13)
+ROUTE_STATIONS_RANGE = range(5, 10)
 
 # yep, this is all of them
 COLORS = ["purple", "blue", "green", "yellow", "orange", "red", "pink", "teal"]
@@ -80,16 +80,16 @@ class Route(object):
             perc = random.uniform(0, 1)
 
             if perc > 0.20:
-                options = [(val, station) for val, station in sorted_station_ranking if val >= 100]
+                options = [(val, station) for val, station in sorted_station_ranking if val >= 140]
 
                 if len(options) < 2:
                     options = sorted_station_ranking[:2]
 
-            elif perc <= 0.20 and perc > 0.10:
-                options = [(val, station) for val, station in sorted_station_ranking if val >= 60]
+            elif perc <= 0.20 and perc > 0.0:
+                options = [(val, station) for val, station in sorted_station_ranking if val >= 110]
 
-                if len(options) < 4:
-                    options = sorted_station_ranking[:4]
+                if len(options) < 2:
+                    options = sorted_station_ranking[:2]
 
             else:
                 options = sorted_station_ranking[:10]
@@ -142,8 +142,8 @@ def calc_ang(a, b, c):
 
     except ValueError as e:
         LOG.error("Received math.ValueError %s", e)
-        LOG.error("Ignoring it and returning 90 degrees as angle.")
-        return 90
+        LOG.error("Ignoring it and returning 180 degrees as angle.")
+        return 180
 
 
 def station_calc_ang(station, one_ago, two_ago):
