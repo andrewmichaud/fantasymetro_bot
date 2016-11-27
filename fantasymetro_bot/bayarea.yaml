@@ -1,206 +1,211 @@
 name: "BART"
+
 real_stations:
   - name: "Richmond"
-    x: 555
-    y: 135
+    x: 37.9368376
+    y: -122.3553625
 
   - name: "El Cerrito del Norte"
-    x: 575
-    y: 175
+    x: 37.9251133
+    y: -122.3189901
 
   - name: "North Berkeley"
-    x: 595
-    y: 215
+    x: 37.8739816
+    y: -122.2855903
 
   - name: "Downtown Berkeley"
-    x: 615
-    y: 255
+    x: 37.8701015
+    y: -122.2703359
 
   - name: "Ashby"
-    x: 635
-    y: 295
+    x: 37.852811
+    y: -122.2722516
 
   - name: "MacArthur"
-    x: 645
-    y: 335
+    x: 37.8290685
+    y: -122.2692357
 
   - name: "19th St./Oakland"
-    x: 642
-    y: 360
+    x: 37.80763
+    y: -122.2712062
 
   - name: "12th St./Oakland City Center"
-    x: 639
-    y: 385
+    x: 37.8037732
+    y: -122.2736394
 
   - name: "West Oakland"
-    x: 585
-    y: 420
+    x: 37.8048775
+    y: -122.2973283
 
   - name: "Embarcadero"
-    x: 465
-    y: 475
+    x: 37.7929095
+    y: -122.3992477
 
   - name: "Montgomery St."
-    x: 455
-    y: 490
+    x: 37.7893518
+    y: -122.4033326
 
   - name: "Powell St."
-    x: 445
-    y: 505
+    x: 37.784473
+    y: -122.4101751
 
   - name: "Civic Center/UN Plaza"
-    x: 435
-    y: 520
+    x: 37.7797602
+    y: -122.4163387
 
   - name: "16th St. Mission"
-    x: 425
-    y: 535
+    x: 37.7648036
+    y: -122.4221844
 
   - name: "24th St. Mission"
-    x: 400
-    y: 565
+    x: 37.7524805
+    y: -122.4203345
 
   - name: "Glen Park"
-    x: 395
-    y: 575
+    x: 37.733067
+    y: -122.4360081
 
   - name: "Balboa Park"
-    x: 395
-    y: 590
+    x: 37.721601
+    y: -122.4496997
 
   - name: "Daly City"
-    x: 390
-    y: 645
+    x: 37.7063674
+    y: -122.4714491
 
   - name: "Colma"
-    x: 396
-    y: 661
+    x: 37.6846422
+    y: -122.4684217
 
   - name: "South San Francisco"
-    x: 398
-    y: 725
+    x: 37.6642503
+    y: -122.446151
 
   - name: "San Bruno"
-    x: 402
-    y: 765
+    x: 37.6377864
+    y: -122.4185622
 
   - name: "San Francisco International Airport (SFO)"
-    x: 450
-    y: 780
+    x: 37.6402197
+    y: -122.488228
 
   - name: "Millbrae"
-    x: 430
-    y: 825
+    x: 37.6002752
+    y: -122.3888955
 
   - name: "Lake Merritt"
-    x: 670
-    y: 370
+    x: 37.7970345
+    y: -122.2673716
 
   - name: "Fruitvale"
-    x: 672
-    y: 420
+    x: 37.7748395
+    y: -122.2263711
 
   - name: "Coliseum"
-    x: 695
-    y: 455
+    x: 37.7536727
+    y: -122.1990868
 
   - name: "San Leandro"
-    x: 742
-    y: 515
+    x: 37.7219544
+    y: -122.163044
 
   - name: "Bay Fair"
-    x: 745
-    y: 540
+    x: 37.6969796
+    y: -122.1287693
 
   - name: "Hayward"
-    x: 855
-    y: 700
+    x: 37.6697944
+    y: -122.0891976
 
   - name: "South Hayward"
-    x: 917
-    y: 777
+    x: 37.6343644
+    y: -122.0593897
 
   - name: "Union City"
-    x: 977
-    y: 805
+    x: 37.5906302
+    y: -122.019582
 
   - name: "Fremont"
-    x: 1002
-    y: 862
+    x: 37.5574717
+    y: -121.9788225
 
   - name: "Castro Valley"
-    x: 932
-    y: 580
+    x: 37.6907516
+    y: -122.0777947
 
   - name: "West Dublin/Pleasanton"
-    x: 1042
-    y: 630
+    x: 37.6997604
+    y: -121.930429
 
   - name: "Dublin/Pleasanton"
-    x: 1102
-    y: 630
+    x: 37.7016207
+    y: -121.9035909
 
   - name: "Rockridge"
-    x: 675
-    y: 305
+    x: 37.8447065
+    y: -122.2535807
 
   - name: "Orinda"
-    x: 810
-    y: 180
+    x: 37.8783642
+    y: -122.185988
 
   - name: "Lafayette"
-    x: 850
-    y: 170
+    x: 37.8931842
+    y: -122.1268296
 
   - name: "Walnut Creek"
-    x: 890
-    y: 160
+    x: 37.9055276
+    y: -122.0697154
 
-  - name: "Pleasant Hill/Contra Coast Centre"
-    x: 930
-    y: 150
+  - name: "Pleasant Hill/Contra Costa Centre"
+    x: 37.9286795
+    y: -122.0578968
 
   - name: "Concord"
-    x: 970
-    y: 140
+    x: 37.9737412
+    y: -122.0312837
 
   - name: "North Concord/Martinez"
-    x: 1000
-    y: 112
+    x: 38.0031968
+    y: -122.0268444
 
   - name: "Pittsburg/Bay Point"
-    x: 1030
-    y: 90
+    x: 38.0176053
+    y: -121.9475089
 
 fantasy_stations:
   - name: "Milpitas"
-    x: 1100
-    y: 1100
+    x: 37.4315228
+    y: -121.902478
 
   - name: "Warm Springs"
-    x: 1100
-    y: 950
+    x: 37.5013636
+    y: -121.939694
 
   - name: "Marin"
-    x: 100
-    y: 50
+    x: 38.0682018
+    y: -122.8733552
 
   - name: "San Jose"
-    x: 1030
-    y: 400
+    x: 37.2972061
+    y: -121.9574919
 
   - name: "Palo Alto"
-    x: 950
-    y: 480
+    x: 37.425713
+    y: -122.1703692
 
   - name: "Mountain View"
-    x: 977
-    y: 1110
+    x: 37.4038824
+    y: -122.1162862
 
   - name: "San Rafel"
-    x: 220
-    y: 130
+    x: 37.9852496
+    y: -122.5557712
 
   - name: "Alameda"
-    x: 662
-    y: 450
+    x: 37.7579723
+    y: -122.3133208
+
+  - name: "Treasure Island"
+    x: 37.8201654
+    y: -122.3777419
