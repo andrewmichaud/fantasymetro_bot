@@ -34,6 +34,7 @@ class Metro(object):
     def draw(self, source_image, dest_image):
         """Draw metro onto image."""
 
+        # TODO I bet there's a neat context manager you could set up with im here.
         base, ext = os.path.splitext(source_image)
         copyfile(source_image, dest_image)
 
@@ -67,10 +68,51 @@ class Metro(object):
         # Draw text last so it is at the top layer.
         for r in self.routes:
             for s in r.all_stations:
-                draw.text((s.x+RADIUS, s.y+RADIUS), s.name, fill="purple", font=font)
+                draw.text((s.x + RADIUS, s.y + RADIUS), s.name, fill="purple", font=font)
 
         # Save image.
         im.save(dest_image)
+
+
+def debug_draw(system_name):
+    """Draw all stations onto map, to test accuracy of station positions."""
+
+    # Load station set and generate a single route.
+    conf = system_name + ".yaml"
+    station_set = stationset.load(conf)
+    r = route.Route(station_set)
+
+    # Do the drawing - skip lines, just do stations.
+    source_image = system_name + ".png"
+    dest_image = system_name + "-drawn.png"
+
+    base, ext = os.path.splitext(source_image)
+    copyfile(source_image, dest_image)
+
+    im = Image.open(dest_image)
+
+    font = ImageFont.truetype("DejaVuSerif.ttf", 16)
+
+    draw = ImageDraw.Draw(im)
+
+    for s in r.full_real:
+        RADIUS = 6
+        draw.ellipse([s.x - RADIUS, s.y - RADIUS,
+                      s.x + RADIUS, s.y + RADIUS],
+                     outline="red",
+                     fill="red")
+        draw.text((s.x + RADIUS, s.y + RADIUS), s.name, fill="red", font=font)
+
+    for s in r.full_fantasy:
+        RADIUS = 6
+        draw.ellipse([s.x - RADIUS, s.y - RADIUS,
+                      s.x + RADIUS, s.y + RADIUS],
+                     outline="blue",
+                     fill="blue")
+        draw.text((s.x + RADIUS, s.y + RADIUS), s.name, fill="blue", font=font)
+
+    # Save image.
+    im.save(dest_image)
 
 
 def gen(config_file, source_image, dest_image):
@@ -93,3 +135,6 @@ def gen(config_file, source_image, dest_image):
 
     LOG.info("Drawing metro system for %s to %s", station_set.name, dest_image)
     metro.draw(source_image, dest_image)
+
+if __name__ == "__main__":
+    debug_draw("bayarea")

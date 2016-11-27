@@ -28,6 +28,10 @@ class Route(object):
 
         self.station_gen(station_set)
 
+        # Preserve full sets of real and fantasy stations for debugging purposes.
+        self.full_real = copy.copy(station_set.real_stations)
+        self.full_fantasy = copy.copy(station_set.fantasy_stations)
+
         # For now, let's say route takes first terminus' name. May change later.
         self.name = self.start.name
         LOG.debug("Chose %s as route name.", self.name)

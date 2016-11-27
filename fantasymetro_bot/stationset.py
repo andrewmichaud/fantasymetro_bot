@@ -32,8 +32,18 @@ def station_from_yaml(yaml):
     station = Station()
 
     station.name = yaml.get("name", None)
-    station.x = yaml.get("x", None)
-    station.y = yaml.get("y", None)
+
+    # Transform from coordinates provided in file to coordinates on image.
+    # TODO use parameters in config file.
+    # TODO do something about that None.
+    X_SHIFT = 178120
+    Y_SHIFT = 59000
+    X_SCALE = 1450.69
+    Y_SCALE = -1550.69
+    station.x = (yaml.get("long", None) * X_SCALE) + X_SHIFT
+    station.y = (yaml.get("lat", None) * Y_SCALE) + Y_SHIFT
+    print(station.x)
+    print(station.y)
 
     return station
 

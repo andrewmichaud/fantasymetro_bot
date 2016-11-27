@@ -2,210 +2,210 @@ name: "BART"
 
 real_stations:
   - name: "Richmond"
-    x: 37.9368376
-    y: -122.3553625
+    lat: 37.9368376
+    long: -122.3553625
 
   - name: "El Cerrito del Norte"
-    x: 37.9251133
-    y: -122.3189901
+    lat: 37.9251133
+    long: -122.3189901
 
   - name: "North Berkeley"
-    x: 37.8739816
-    y: -122.2855903
+    lat: 37.8739816
+    long: -122.2855903
 
   - name: "Downtown Berkeley"
-    x: 37.8701015
-    y: -122.2703359
+    lat: 37.8701015
+    long: -122.2703359
 
   - name: "Ashby"
-    x: 37.852811
-    y: -122.2722516
+    lat: 37.852811
+    long: -122.2722516
 
   - name: "MacArthur"
-    x: 37.8290685
-    y: -122.2692357
+    lat: 37.8290685
+    long: -122.2692357
 
   - name: "19th St./Oakland"
-    x: 37.80763
-    y: -122.2712062
+    lat: 37.80763
+    long: -122.2712062
 
   - name: "12th St./Oakland City Center"
-    x: 37.8037732
-    y: -122.2736394
+    lat: 37.8037732
+    long: -122.2736394
 
   - name: "West Oakland"
-    x: 37.8048775
-    y: -122.2973283
+    lat: 37.8048775
+    long: -122.2973283
 
   - name: "Embarcadero"
-    x: 37.7929095
-    y: -122.3992477
+    lat: 37.7929095
+    long: -122.3992477
 
   - name: "Montgomery St."
-    x: 37.7893518
-    y: -122.4033326
+    lat: 37.7893518
+    long: -122.4033326
 
   - name: "Powell St."
-    x: 37.784473
-    y: -122.4101751
+    lat: 37.784473
+    long: -122.4101751
 
   - name: "Civic Center/UN Plaza"
-    x: 37.7797602
-    y: -122.4163387
+    lat: 37.7797602
+    long: -122.4163387
 
   - name: "16th St. Mission"
-    x: 37.7648036
-    y: -122.4221844
+    lat: 37.7648036
+    long: -122.4221844
 
   - name: "24th St. Mission"
-    x: 37.7524805
-    y: -122.4203345
+    lat: 37.7524805
+    long: -122.4203345
 
   - name: "Glen Park"
-    x: 37.733067
-    y: -122.4360081
+    lat: 37.733067
+    long: -122.4360081
 
   - name: "Balboa Park"
-    x: 37.721601
-    y: -122.4496997
+    lat: 37.721601
+    long: -122.4496997
 
   - name: "Daly City"
-    x: 37.7063674
-    y: -122.4714491
+    lat: 37.7063674
+    long: -122.4714491
 
   - name: "Colma"
-    x: 37.6846422
-    y: -122.4684217
+    lat: 37.6846422
+    long: -122.4684217
 
   - name: "South San Francisco"
-    x: 37.6642503
-    y: -122.446151
+    lat: 37.6642503
+    long: -122.446151
 
   - name: "San Bruno"
-    x: 37.6377864
-    y: -122.4185622
+    lat: 37.6377864
+    long: -122.4185622
 
   - name: "San Francisco International Airport (SFO)"
-    x: 37.6402197
-    y: -122.488228
+    lat: 37.6402197
+    long: -122.488228
 
   - name: "Millbrae"
-    x: 37.6002752
-    y: -122.3888955
+    lat: 37.6002752
+    long: -122.3888955
 
   - name: "Lake Merritt"
-    x: 37.7970345
-    y: -122.2673716
+    lat: 37.7970345
+    long: -122.2673716
 
   - name: "Fruitvale"
-    x: 37.7748395
-    y: -122.2263711
+    lat: 37.7748395
+    long: -122.2263711
 
   - name: "Coliseum"
-    x: 37.7536727
-    y: -122.1990868
+    lat: 37.7536727
+    long: -122.1990868
 
   - name: "San Leandro"
-    x: 37.7219544
-    y: -122.163044
+    lat: 37.7219544
+    long: -122.163044
 
   - name: "Bay Fair"
-    x: 37.6969796
-    y: -122.1287693
+    lat: 37.6969796
+    long: -122.1287693
 
   - name: "Hayward"
-    x: 37.6697944
-    y: -122.0891976
+    lat: 37.6697944
+    long: -122.0891976
 
   - name: "South Hayward"
-    x: 37.6343644
-    y: -122.0593897
+    lat: 37.6343644
+    long: -122.0593897
 
   - name: "Union City"
-    x: 37.5906302
-    y: -122.019582
+    lat: 37.5906302
+    long: -122.019582
 
   - name: "Fremont"
-    x: 37.5574717
-    y: -121.9788225
+    lat: 37.5574717
+    long: -121.9788225
 
   - name: "Castro Valley"
-    x: 37.6907516
-    y: -122.0777947
+    lat: 37.6907516
+    long: -122.0777947
 
   - name: "West Dublin/Pleasanton"
-    x: 37.6997604
-    y: -121.930429
+    lat: 37.6997604
+    long: -121.930429
 
   - name: "Dublin/Pleasanton"
-    x: 37.7016207
-    y: -121.9035909
+    lat: 37.7016207
+    long: -121.9035909
 
   - name: "Rockridge"
-    x: 37.8447065
-    y: -122.2535807
+    lat: 37.8447065
+    long: -122.2535807
 
   - name: "Orinda"
-    x: 37.8783642
-    y: -122.185988
+    lat: 37.8783642
+    long: -122.185988
 
   - name: "Lafayette"
-    x: 37.8931842
-    y: -122.1268296
+    lat: 37.8931842
+    long: -122.1268296
 
   - name: "Walnut Creek"
-    x: 37.9055276
-    y: -122.0697154
+    lat: 37.9055276
+    long: -122.0697154
 
   - name: "Pleasant Hill/Contra Costa Centre"
-    x: 37.9286795
-    y: -122.0578968
+    lat: 37.9286795
+    long: -122.0578968
 
   - name: "Concord"
-    x: 37.9737412
-    y: -122.0312837
+    lat: 37.9737412
+    long: -122.0312837
 
   - name: "North Concord/Martinez"
-    x: 38.0031968
-    y: -122.0268444
+    lat: 38.0031968
+    long: -122.0268444
 
   - name: "Pittsburg/Bay Point"
-    x: 38.0176053
-    y: -121.9475089
+    lat: 38.0176053
+    long: -121.9475089
 
 fantasy_stations:
   - name: "Milpitas"
-    x: 37.4315228
-    y: -121.902478
+    lat: 37.4315228
+    long: -121.902478
 
   - name: "Warm Springs"
-    x: 37.5013636
-    y: -121.939694
+    lat: 37.5013636
+    long: -121.939694
 
   - name: "Marin"
-    x: 38.0682018
-    y: -122.8733552
+    lat: 38.0682018
+    long: -122.8733552
 
   - name: "San Jose"
-    x: 37.2972061
-    y: -121.9574919
+    lat: 37.2972061
+    long: -121.9574919
 
   - name: "Palo Alto"
-    x: 37.425713
-    y: -122.1703692
+    lat: 37.425713
+    long: -122.1703692
 
   - name: "Mountain View"
-    x: 37.4038824
-    y: -122.1162862
+    lat: 37.4038824
+    long: -122.1162862
 
   - name: "San Rafel"
-    x: 37.9852496
-    y: -122.5557712
+    lat: 37.9852496
+    long: -122.5557712
 
   - name: "Alameda"
-    x: 37.7579723
-    y: -122.3133208
+    lat: 37.7579723
+    long: -122.3133208
 
   - name: "Treasure Island"
-    x: 37.8201654
-    y: -122.3777419
+    lat: 37.8201654
+    long: -122.3777419
