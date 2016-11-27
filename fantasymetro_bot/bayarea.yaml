@@ -1,5 +1,13 @@
 name: "BART"
 
+long_shift: 141320
+
+lat_shift: 60970
+
+long_scale: 1150.69
+
+lat_scale: -1600.69
+
 real_stations:
   - name: "Richmond"
     lat: 37.9368376
@@ -86,12 +94,12 @@ real_stations:
     long: -122.4185622
 
   - name: "San Francisco International Airport (SFO)"
-    lat: 37.6402197
-    long: -122.488228
+    lat: 37.5909945
+    long: -122.392144
 
   - name: "Millbrae"
-    lat: 37.6002752
-    long: -122.3888955
+    lat: 37.5981897
+    long: -122.3875454
 
   - name: "Lake Merritt"
     lat: 37.7970345
@@ -183,12 +191,20 @@ fantasy_stations:
     long: -121.939694
 
   - name: "Marin"
-    lat: 38.0682018
-    long: -122.8733552
+    lat: 37.999018
+    long: -122.6433552
 
-  - name: "San Jose"
-    lat: 37.2972061
-    long: -121.9574919
+  - name: "San Mateo"
+    lat: 37.535713
+    long: -122.2903692
+
+  - name: "South San Mateo"
+    lat: 37.485713
+    long: -122.2353692
+
+  - name: "North San Jose"
+    lat: 37.4038824
+    long: -121.9562862
 
   - name: "Palo Alto"
     lat: 37.425713
@@ -204,8 +220,8 @@ fantasy_stations:
 
   - name: "Alameda"
     lat: 37.7579723
-    long: -122.3133208
+    long: -122.2590000
 
   - name: "Treasure Island"
-    lat: 37.8201654
-    long: -122.3777419
+    lat: 37.8401654
+    long: -122.3677419

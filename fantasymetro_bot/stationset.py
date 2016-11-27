@@ -33,17 +33,9 @@ def station_from_yaml(yaml):
 
     station.name = yaml.get("name", None)
 
-    # Transform from coordinates provided in file to coordinates on image.
-    # TODO use parameters in config file.
     # TODO do something about that None.
-    X_SHIFT = 178120
-    Y_SHIFT = 59000
-    X_SCALE = 1450.69
-    Y_SCALE = -1550.69
-    station.x = (yaml.get("long", None) * X_SCALE) + X_SHIFT
-    station.y = (yaml.get("lat", None) * Y_SCALE) + Y_SHIFT
-    print(station.x)
-    print(station.y)
+    station.x = yaml.get("long", None)
+    station.y = yaml.get("lat", None)
 
     return station
 
@@ -57,6 +49,15 @@ def stationset_from_yaml(yaml):
 
     LOG.info("Loaded stationset %s from config.", station_set.name)
 
+    # Get scale factors for later.
+    long_shift = yaml.get("long_shift", 0)
+    long_scale = yaml.get("long_scale", 1.0)
+
+    lat_shift = yaml.get("lat_shift", 0)
+    lat_scale = yaml.get("lat_scale", 1.0)
+
+    print(long_shift)
+
     station_set.real_stations = set()
     station_set.fantasy_stations = set()
 
@@ -65,12 +66,23 @@ def stationset_from_yaml(yaml):
     for station_yaml in real_stations_yaml:
         station_set.real_stations.add(station_from_yaml(station_yaml))
 
+    LOG.debug("Transforming real station coords according to scale factors.")
+    for s in station_set.real_stations:
+        s.x = (s.x * long_scale) + long_shift
+        s.y = (s.y * lat_scale) + lat_shift
+        print(s.x, s.y)
+
     LOG.debug("Loaded real stations %s.", station_set.real_stations)
 
     LOG.debug("Loading fantasy stations from config YAML.")
     fantasy_stations_yaml = yaml.get("fantasy_stations", [])
     for station_yaml in fantasy_stations_yaml:
         station_set.fantasy_stations.add(station_from_yaml(station_yaml))
+
+    LOG.debug("Transforming fantasy station coords according to scale factors.")
+    for s in station_set.fantasy_stations:
+        s.x = (s.x * long_scale) + long_shift
+        s.y = (s.y * lat_scale) + lat_shift
 
     LOG.debug("Loaded fantasy stations %s.", station_set.fantasy_stations)
 
