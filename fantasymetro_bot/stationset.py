@@ -56,8 +56,6 @@ def stationset_from_yaml(yaml):
     lat_shift = yaml.get("lat_shift", 0)
     lat_scale = yaml.get("lat_scale", 1.0)
 
-    print(long_shift)
-
     station_set.real_stations = set()
     station_set.fantasy_stations = set()
 
@@ -70,7 +68,6 @@ def stationset_from_yaml(yaml):
     for s in station_set.real_stations:
         s.x = (s.x * long_scale) + long_shift
         s.y = (s.y * lat_scale) + lat_shift
-        print(s.x, s.y)
 
     LOG.debug("Loaded real stations %s.", station_set.real_stations)
 
