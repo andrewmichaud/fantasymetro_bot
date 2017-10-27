@@ -1,9 +1,13 @@
 """StationSet object, Station object, and methods for producing them from YAMl config files."""
 import logging
+import os
+from os import path
 
 import yaml
 
 LOG = logging.getLogger("root")
+
+HERE = path.abspath(path.dirname(__file__))
 
 
 class StationSet(object):
@@ -13,7 +17,7 @@ class StationSet(object):
         self.fantasy_stations = set()
 
     def __repr__(self):
-        return "StationSet(name: '{}', stations: {})".format(self.name, self.stations)
+        return f"StationSet(name: '{self.name}', stations: {self.stations})"
 
 
 class Station(object):
@@ -24,7 +28,7 @@ class Station(object):
         self.y = None
 
     def __repr__(self):
-        return "Station(name: '{}', x: {}, y: {})".format(self.name, self.x, self.y)
+        return f"Station(name: '{self.name}', x: {self.x}, y: {self.y})"
 
 
 def station_from_yaml(yaml):
@@ -69,7 +73,7 @@ def stationset_from_yaml(yaml):
         s.x = (s.x * long_scale) + long_shift
         s.y = (s.y * lat_scale) + lat_shift
 
-    LOG.debug("Loaded real stations %s.", station_set.real_stations)
+    LOG.debug(f"Loaded real stations {station_set.real_stations}.")
 
     LOG.debug("Loading fantasy stations from config YAML.")
     fantasy_stations_yaml = yaml.get("fantasy_stations", [])
@@ -81,7 +85,7 @@ def stationset_from_yaml(yaml):
         s.x = (s.x * long_scale) + long_shift
         s.y = (s.y * lat_scale) + lat_shift
 
-    LOG.debug("Loaded fantasy stations %s.", station_set.fantasy_stations)
+    LOG.debug(f"Loaded fantasy stations {station_set.fantasy_stations}")
 
     return station_set
 
@@ -89,11 +93,11 @@ def stationset_from_yaml(yaml):
 def load(filename):
     """Load StationSet from a YAML file."""
 
-    with open(filename, "r") as stream:
+    with open(os.path.join(HERE, filename), "r") as stream:
         LOG.debug("Opening stationset config file to retrieve stationset.")
         yaml_stationset = yaml.safe_load(stream)
 
     pretty_stationset = yaml.dump(yaml_stationset, width=1, indent=4)
-    LOG.debug("Retrieved YAML from stationset file: %s", pretty_stationset)
+    LOG.debug(f"Retrieved YAML from stationset file: {pretty_stationset}")
 
     return stationset_from_yaml(yaml_stationset)

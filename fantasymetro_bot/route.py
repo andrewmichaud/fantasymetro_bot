@@ -34,7 +34,7 @@ class Route(object):
 
         # For now, let's say route takes first terminus' name. May change later.
         self.name = self.start.name
-        LOG.debug("Chose %s as route name.", self.name)
+        LOG.debug(f"Chose {self.name} as route name.")
 
     def station_gen(self, station_set):  # alg=NEARNESS_SLOPE_COMBINED_RANKING):
         """Generate list of stations for this route from a list of possible stations."""
@@ -52,10 +52,10 @@ class Route(object):
 
         num_stations = random.choice(STATIONS_RANGE)
         if num_stations > len(remaining_real):
-            LOG.debug("Capping num_stations to %s (was %s).", len(remaining_real), num_stations)
+            LOG.debug(f"Capping num_stations to {len(remaining_real)} (was {num_stations}).")
             num_stations = len(remaining_real)
 
-        LOG.debug("Picking %s stations for this route.", num_stations)
+        LOG.debug(f"Picking {num_stations} stations for this route.")
 
         # Decide on stations for route.
         one_ago = None
@@ -85,7 +85,7 @@ class Route(object):
             angs = {station_calc_ang(station, one_ago, two_ago): station for station in
                     stations_list}
             sorted_station_ranking = sorted(angs.items(), reverse=True)
-            LOG.debug("Sorted stations: {}".format(sorted_station_ranking))
+            LOG.debug(f"Sorted stations: {sorted_station_ranking}")
 
             perc = random.uniform(0, 1)
             if perc > 0.20:
@@ -123,14 +123,14 @@ class Route(object):
         self.all_stations = [self.start] + self.stations + [self.end]
 
     def __repr__(self):
-        first_line = "Route(name: '{}', color: '{}')\n".format(self.name, self.color)
+        first_line = f"Route(name: '{self.name}', color: '{self.color}')\n"
 
-        second_line = "[{}]".format(self.start.name)
+        second_line = f"[{self.start.name}]"
 
         for station in self.stations[1:-1]:
-            second_line += "--({})".format(station.name)
+            second_line += f"--({station.name})"
 
-        second_line += "--[{}]".format(self.end.name)
+        second_line += f"--[{self.end.name}]"
 
         return first_line + second_line
 
@@ -161,7 +161,7 @@ def calc_ang(a, b, c):
     except ValueError as e:
         # TODO figure out what the domain error is here. I suspect we're getting angles >180, but I
         # haven't actually dug into it.
-        LOG.error("Received math.ValueError %s", e)
+        LOG.error(f"Received math.ValueError {e}")
         LOG.error("Ignoring it and returning 180 degrees as angle.")
         return 180
 

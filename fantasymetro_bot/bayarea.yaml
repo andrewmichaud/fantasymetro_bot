@@ -1,12 +1,12 @@
 name: "BART"
 
-long_shift: 141320
+long_shift: 142320
 
-lat_shift: 60970
+lat_shift: 60870
 
-long_scale: 1150.69
+long_scale: 1160.69
 
-lat_scale: -1600.69
+lat_scale: -1610.69
 
 real_stations:
   - name: "Richmond"

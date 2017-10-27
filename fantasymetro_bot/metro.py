@@ -2,6 +2,7 @@
 import logging
 import os
 import random
+from os import path
 from shutil import copyfile
 
 from PIL import Image, ImageDraw, ImageFont
@@ -11,6 +12,7 @@ import stationset
 
 LOG = logging.getLogger("root")
 
+HERE = path.abspath(path.dirname(__file__))
 
 # Number of routes to put in the metro system.
 NUM_ROUTES_RANGE = range(3, 6)
@@ -23,7 +25,7 @@ class Metro(object):
         self.routes = routes
 
     def __repr__(self):
-        out = "Metro(name: {})\n".format(self.name)
+        out = f"Metro(name: {self.name})\n"
         for i, r in enumerate(self.routes):
             out += repr(r)
             if i < len(self.routes)-1:
@@ -78,13 +80,13 @@ def debug_draw(system_name):
     """Draw all stations onto map, to test accuracy of station positions."""
 
     # Load station set and generate a single route.
-    conf = system_name + ".yaml"
+    conf = f"{system_name}.yaml"
     station_set = stationset.load(conf)
     r = route.Route(station_set)
 
     # Do the drawing - skip lines, just do stations.
-    source_image = system_name + ".png"
-    dest_image = system_name + "-drawn.png"
+    source_image = f"{system_name}.png"
+    dest_image = f"{system_name}-drawn.png"
 
     base, ext = os.path.splitext(source_image)
     copyfile(source_image, dest_image)
@@ -118,10 +120,10 @@ def debug_draw(system_name):
 def gen(config_file, source_image, dest_image):
     """Generate a fantasy metro system image."""
     station_set = stationset.load(config_file)
-    LOG.debug("Producing fantasy metro system for %s.", station_set.name)
+    LOG.debug(f"Producing fantasy metro system for {station_set.name}.")
 
     num_routes = random.choice(NUM_ROUTES_RANGE)
-    LOG.debug("Creating %s routes.", num_routes)
+    LOG.debug(f"Creating {num_routes} routes.")
 
     routes = []
     chosen_colors = []
@@ -133,7 +135,7 @@ def gen(config_file, source_image, dest_image):
     # Draw metro.
     metro = Metro(routes=routes, name=station_set.name)
 
-    LOG.info("Drawing metro system for %s to %s", station_set.name, dest_image)
+    LOG.info(f"Drawing metro system for {station_set.name} to {dest_image}")
     metro.draw(source_image, dest_image)
 
 if __name__ == "__main__":

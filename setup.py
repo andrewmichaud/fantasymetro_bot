@@ -13,7 +13,7 @@ setup(author="Andrew Michaud",
           "console_scripts": ["fantasy_metro_bot = fantasy_metro_bot.__main__:main"]
       },
 
-      install_requires=["pillow>=3.4.2", "pyyaml>=3.12""tweepy>=3.5"],
+      install_requires=["Pillow", "pyyaml>=3.12", "botskeleton>=1.0.5"],
 
       license="BSD3",
 
@@ -21,7 +21,8 @@ setup(author="Andrew Michaud",
 
       packages=find_packages(),
 
-      # Project"s main homepage
+      python_requires=">=3.6",
+
       url="https://github.com/andrewmichaud/fantasymetro_bot",
 
       version=VERSION)
