@@ -22,7 +22,8 @@ METRO_CITY_OPTIONS = {
 
 if __name__ == "__main__":
     SECRETS_DIR = os.path.join(os.path.abspath(os.path.dirname(__file__)), "SECRETS")
-    api = botskeleton.BotSkeleton(SECRETS_DIR, bot_name="fantasymetro_bot")
+    BOT_SKELETON = botskeleton.BotSkeleton(secrets_dir=SECRETS_DIR, bot_name="fantasymetro_bot",
+                                           delay=DELAY)
 
     LOG = botskeleton.set_up_logging()
 
@@ -49,7 +50,6 @@ if __name__ == "__main__":
 
         LOG.info("Sending fantasy metro tweet.")
 
-        api.send_with_one_media(f"Fantasy metro for {long_name}", out_file)
+        BOT_SKELETON.send_with_one_media(f"Fantasy metro for {long_name}", out_file)
 
-        LOG.info(f"Sleeping for {DELAY} seconds.")
-        time.sleep(DELAY)
+        BOT_SKELETON.nap()
