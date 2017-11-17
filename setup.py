@@ -13,7 +13,7 @@ setup(author="Andrew Michaud",
           "console_scripts": ["fantasy_metro_bot = fantasy_metro_bot.__main__:main"]
       },
 
-      install_requires=["Pillow", "pyyaml>=3.12", "botskeleton>=1.1.0"],
+      install_requires=["Pillow", "pyyaml>=3.12", "botskeleton>=1.2.0"],
 
       license="BSD3",
 
